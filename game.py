@@ -30,6 +30,78 @@ LEVELS_TRUE = ['def generate_pattern(self):\n\
     dot_list = []\n\
     for i in range(25):\n\
         dot_list.append(self._mun_color.random_hvc(0, 10, 4, 7, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 4: lighter as it moves up\n\
+    dot_list = []\n\
+    for y in range(5):\n\
+        for x in range(5):\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 10-y, 10-y, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 5: chroma increases to center\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        if i in [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 21, 22, 23, 24]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 1, 1))\n\
+        elif i in [6, 7, 8, 11, 13, 16, 17, 18]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 2, 2))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 6: equiluminent\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        dot_list.append(self._mun_color.random_hvc(0, 10, 6, 6, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 7: complementary\n\
+    dot_list = []\n\
+    h = int(uniform(0, 10))\n\
+    for i in range(25):\n\
+        if int(uniform(0, 2)):\n\
+            dot_list.append(self._mun_color.random_hvc(h, h, 6, 6, 3, 3))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(h+5, h+5, 6, 6, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 8: hue increase down\n\
+    dot_list = []\n\
+    for y in range(5):\n\
+        for x in range(5):\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                y*2, y*2+1, 4, 7, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 9: interlocking hues\n\
+    dot_list = []\n\
+    h = int(uniform(0, 10))\n\
+    for i in range(25):\n\
+        if i in [0, 1, 2, 3, 4, 9, 14, 19, 18, 17, 16, 11]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h, h, 4, 7, 2, 3))\n\
+        elif i == 12:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h + 2, h + 2, 4, 7, 0, 2))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h + 4, h + 4, 4, 7, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 10: checkerboard\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        if i % 2 == 0:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 5, 1, 1))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 7, 8, 3, 3))\n\
     return dot_list\n']
 LEVELS_FALSE = ['def generate_pattern(self):\n\
     # Level 1: Center dot is not Red\n\
@@ -41,15 +113,87 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
                'def generate_pattern(self):\n\
     # Level 2: not monochrome\n\
     dot_list = []\n\
-    h = int(uniform(0, 8))\n\
+    h = int(uniform(0, 7))\n\
     for i in range(25):\n\
-        dot_list.append(self._mun_color.random_hue(h, h + 2))\n\
+        dot_list.append(self._mun_color.random_hue(h, h + 3))\n\
     return dot_list\n',
                'def generate_pattern(self):\n\
     # Level 3: not max chroma\n\
     dot_list = []\n\
     for i in range(25):\n\
         dot_list.append(self._mun_color.random_hvc(0, 10, 4, 7, 0, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 4: lighter as it moves down\n\
+    dot_list = []\n\
+    for y in range(5):\n\
+        for x in range(5):\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, y+5, y+5, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 5: chroma decreases to center\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        if i in [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 21, 22, 23, 24]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 3, 3))\n\
+        elif i in [6, 7, 8, 11, 13, 16, 17, 18]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 2, 2))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 4, 7, 1, 1))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 6: not equiluminent\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        dot_list.append(self._mun_color.random_hvc(0, 10, 4, 8, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 7: complementary\n\
+    dot_list = []\n\
+    h = int(uniform(0, 10))\n\
+    for i in range(25):\n\
+        if int(uniform(0, 2)):\n\
+            dot_list.append(self._mun_color.random_hvc(h, h, 6, 6, 3, 3))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(h+2, h+2, 6, 6, 3, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 8: hue increase up\n\
+    dot_list = []\n\
+    for y in range(5):\n\
+        for x in range(5):\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                8-y*2, 9-y*2, 4, 7, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 9: interlocking hues\n\
+    dot_list = []\n\
+    h = int(uniform(0, 10))\n\
+    for i in range(25):\n\
+        if i in [0, 1, 2, 3, 4, 9, 14, 19, 18, 17, 16, 11]:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h, h, 4, 7, 2, 3))\n\
+        elif i == 12:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h, h + 1, 4, 7, 0, 2))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                h + 1, h + 1, 4, 7, 2, 3))\n\
+    return dot_list\n',
+               'def generate_pattern(self):\n\
+    # Level 10: chroma checkerboard\n\
+    dot_list = []\n\
+    for i in range(25):\n\
+        if i % 2 == 0:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 5, 5, 0, 1))\n\
+        else:\n\
+            dot_list.append(self._mun_color.random_hvc(\n\
+                0, 10, 5, 5, 3, 3))\n\
     return dot_list\n']
 
 
