@@ -1,0 +1,8 @@
+[Activity]
+name = ColorDeducto
+exec = sugar-activity ColorDeductoActivity.ColorDeductoActivity
+bundle_id = in.seeta.ColorDeducto
+icon = activity-color-deducto
+activity_version = 5
+show_launcher = yes
+license=GPLv3
