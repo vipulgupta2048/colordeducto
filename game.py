@@ -247,7 +247,7 @@ class Game():
         self._height = gtk.gdk.screen_height() - (GRID_CELL_SIZE * 1.5)
         self._scale = self._width / (10 * DOT_SIZE * 1.2)
         self._dot_size = int(DOT_SIZE * self._scale)
-        self._space = int(self._dot_size / 5.)
+        self._space = int(self._dot_size / 20.)
         self.max_levels = len(LEVELS_TRUE)
         self.this_pattern = False
 
