@@ -129,7 +129,7 @@ class ColorDeductoActivity(activity.Activity):
             'example', self.toolbar, self._example_cb,
             tooltip=_('Explore some examples.'))
 
-        self.status = label_factory(self.toolbar, '')
+        self.status = label_factory(self.toolbar, '', width=300)
 
         separator_factory(toolbox.toolbar, True, False)
 
