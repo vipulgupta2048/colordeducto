@@ -16,15 +16,9 @@ from gi.repository import Gtk,Gdk
 
 from sugar3.activity import activity
 from sugar3 import profile
-try:
-    from sugar3.graphics.toolbarbox import ToolbarBox
-    _have_toolbox = True
-except ImportError:
-    _have_toolbox = False
-
-if _have_toolbox:
-    from sugar3.activity.widgets import ActivityToolbarButton
-    from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.activity.widgets import StopButton
 from sugar3.graphics.objectchooser import ObjectChooser
 
 from toolbar_utils import button_factory, label_factory, separator_factory
@@ -74,7 +68,7 @@ class ColorDeductoActivity(activity.Activity):
 
         self._python_code = None
 
-        self._setup_toolbars(_have_toolbox)
+        self._setup_toolbars()
         self._setup_dispatch_table()
 
         # Create a canvas
@@ -98,40 +92,28 @@ class ColorDeductoActivity(activity.Activity):
         else:
             self._game.new_game()
 
-    def _setup_toolbars(self, have_toolbox):
+    def _setup_toolbars(self):
         """ Setup the toolbars. """
 
         self.max_participants = 4
 
-        if have_toolbox:
-            toolbox = ToolbarBox()
+        toolbox = ToolbarBox()
 
-            # Activity toolbar
-            activity_button = ActivityToolbarButton(self)
+        # Activity toolbar
+        activity_button = ActivityToolbarButton(self)
 
-            toolbox.toolbar.insert(activity_button, 0)
-            activity_button.show()
+        toolbox.toolbar.insert(activity_button, 0)
+        activity_button.show()
 
-            self.set_toolbar_box(toolbox)
-            toolbox.show()
-            self.toolbar = toolbox.toolbar
-
-        else:
-            # Use pre-0.86 toolbar design
-            games_toolbar = Gtk.Toolbar()
-            toolbox = activity.ActivityToolbox(self)
-            self.set_toolbox(toolbox)
-            toolbox.add_toolbar(_('Game'), games_toolbar)
-            toolbox.show()
-            toolbox.set_current_toolbar(1)
-            self.toolbar = games_toolbar
+        self.set_toolbar_box(toolbox)
+        toolbox.show()
+        self.toolbar = toolbox.toolbar
 
         self._new_game_button = button_factory(
             'new-game', self.toolbar, self._new_game_cb,
             tooltip=_('Start a new game.'))
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, False, True)
+        separator_factory(toolbox.toolbar, False, True)
 
         self._true_button = button_factory(
             'true', self.toolbar, self._true_cb,
@@ -141,8 +123,7 @@ class ColorDeductoActivity(activity.Activity):
             'false', self.toolbar, self._false_cb,
             tooltip=_('The pattern does not match the rule.'))
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, False, True)
+        separator_factory(toolbox.toolbar, False, True)
 
         self._example_button = button_factory(
             'example', self.toolbar, self._example_cb,
@@ -150,19 +131,17 @@ class ColorDeductoActivity(activity.Activity):
 
         self.status = label_factory(self.toolbar, '')
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, True, False)
+        separator_factory(toolbox.toolbar, True, False)
 
         self._gear_button = button_factory(
             'view-source', self.toolbar,
             self._gear_cb,
             tooltip=_('Load a custom level.'))
 
-        if _have_toolbox:
-            stop_button = StopButton(self)
-            stop_button.props.accelerator = '<Ctrl>q'
-            toolbox.toolbar.insert(stop_button, -1)
-            stop_button.show()
+        stop_button = StopButton(self)
+        stop_button.props.accelerator = '<Ctrl>q'
+        toolbox.toolbar.insert(stop_button, -1)
+        stop_button.show()
 
     def _new_game_cb(self, button=None):
         ''' Start a new game. '''
