@@ -178,7 +178,7 @@ class ColorDeductoActivity(activity.Activity):
         ''' Declare pattern true or show an example of a true pattern. '''
         if self._game_over:
             if (not self._sharing) or self._initiating:
-                self.status.set_label(_('Click on new game button to begin.'))
+                self.status.set_label(_('Start a new game.'))
             else:
                 self.status.set_label(_('Wait for sharer to start a new game.'))
             return
@@ -208,7 +208,7 @@ class ColorDeductoActivity(activity.Activity):
         ''' Declare pattern false or show an example of a false pattern. '''
         if self._game_over:
             if (not self._sharing) or self._initiating:
-                self.status.set_label(_('Click on new game button to begin.'))
+                self.status.set_label(_('Start a new game.'))
             else:
                 self.status.set_label(_('Wait for sharer to start a new game.'))
             return
