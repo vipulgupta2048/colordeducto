@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-15 22:31-0400\n"
-"PO-Revision-Date: 2016-05-13 00:30+0000\n"
+"PO-Revision-Date: 2017-10-15 10:44+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1463099429.000000\n"
+"X-POOTLE-MTIME: 1508064266.000000\n"
 
 #: activity/activity.info:2
 msgid "ColorDeducto"
@@ -107,11 +107,11 @@ msgstr ""
 
 #: ColorDeductoActivity.py:281
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr "Załaduj generator wzorów \"Prawda\" z dziennika."
+msgstr "Załaduj generator wzorów \"Prawda\" z dziennika"
 
 #: ColorDeductoActivity.py:288
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr "Załaduj generator wzorów \"Fałsz\" z dziennika."
+msgstr "Załaduj generator wzorów \"Fałsz\" z dziennika"
 
 #: ColorDeductoActivity.py:294
 msgid "New level added"

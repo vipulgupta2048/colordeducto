@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-15 22:31-0400\n"
-"PO-Revision-Date: 2016-05-13 00:26+0000\n"
+"PO-Revision-Date: 2017-10-15 10:43+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ms\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1463099173.000000\n"
+"X-POOTLE-MTIME: 1508064222.000000\n"
 
 #: activity/activity.info:2
 msgid "ColorDeducto"
@@ -33,7 +33,7 @@ msgstr "Permainan"
 
 #: ColorDeductoActivity.py:129
 msgid "Start a new game."
-msgstr "Mulakan permainan baru"
+msgstr "Mulakan permainan baru."
 
 #: ColorDeductoActivity.py:136 ColorDeductoActivity.py:271
 msgid "The pattern matches the rule."
