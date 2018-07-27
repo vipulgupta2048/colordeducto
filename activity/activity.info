@@ -1,10 +1,11 @@
 [Activity]
 name = ColorDeducto
 exec = sugar-activity ColorDeductoActivity.ColorDeductoActivity
+license = GPLv3+;MIT
 bundle_id = in.seeta.ColorDeducto
 icon = activity-color-deducto
 activity_version = 7
 show_launcher = yes
-license = GPLv3
-summary = a game based on logical induction
-category = game
+summary = Color Deducto is a learning activity to help children learn the art of inductive logic through pattern recognition.
+tags = Game
+repository = https://github.com/sugarlabs/colordeducto
